@@ -35,7 +35,7 @@ Let's start with Ember Data's README. I hate reading btw but here we go 😩. I 
 ## Ember Data README https://github.com/emberjs/data
 
 ### What is Ember Data?
-------------------------------------------------------------------------------
+
 
 <strong>Ember data is a data persistence library for Ember.js.</strong>
 
@@ -60,8 +60,7 @@ _Okay, let's continue reading._
 
 Okay, let's continue.
 
-## Installation
-------------------------------------------------------------------------------
+### Installation
 
 `ember-data` is installed by default for new applications generated with `ember-cli`.
 
