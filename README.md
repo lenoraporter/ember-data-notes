@@ -83,5 +83,5 @@ ember install ember-data
 Similarly, if you have generated a new `Ember` application using `ember-cli` but do 
 not wish to use `ember-data`, remove `ember-data` from your `package.json`.
 
-## Ember Data Guides https://guides.emberjs.com/release/models/
+## [Ember.js tutorial for beginners #10 Ember data, store, adapter, serializer (2020)](https://www.youtube.com/watch?v=Le0ifGiNyq4)
 
