@@ -10,6 +10,28 @@ Tang, David](https://www.amazon.com/Pro-Ember-Data-Getting-Work/dp/1484265602)
 - [Ember Data Guides](https://guides.emberjs.com/release/models/)
 - [Ember Data Repository](https://github.com/emberjs/data)
 
-Let's start with Ember Guides. I hate reading btw but here we go 😩
+<ins>Initial questions</ins>
+1. What is Ember Data?
+2. Why should we use it?
+3. How does it look?
+4. How to use it?
+5. How to fetch data from a Rails API?
+6. How to make a small API and practice using Ember Data?
+7. What's ember-concurrency? Does that have anything to do with Ember data?
+8. What are the most efficient ways of using Ember Data?
+9. What are some gotchas or things I should watch out for?
+10. How can I get Ember Data wrong?
+11. What ways should I not use Ember Data?
+12. Who are some folks who know Ember Data well?
+13. How to contribute to Ember Data as a EXTREME junior or as a designer?
+14. How are some of the pros and cons of using Ember Data?
+
+Let's start with Ember Data Repository README. I hate reading btw but here we go 😩. I will include my "dumb" thoughts and questions as well.
+
+## What is Ember Data?
+
+Ember data is a data persistence library for Ember.js.
+
+
 
 
