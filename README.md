@@ -36,7 +36,7 @@ Let's start with Ember Data's README. I hate reading btw but here we go 😩. I 
 
 Ember data is a data persistence library for Ember.js.
 
-_Stop right there!? What is the purpose of a data persistent library? Why is that being called out? Is that something worth _
+_Stop right there!? What is the purpose of a data persistent library? Why is that being called out?_
 
 
 
