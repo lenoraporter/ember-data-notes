@@ -36,11 +36,14 @@ Let's start with Ember Data's README. I hate reading btw but here we go 😩. I 
 
 <strong>Ember data is a data persistence library for Ember.js.</strong>
 
+```
+code {
+  white-space : pre-wrap !important;
+}
+Stop right there!? What is the purpose of a data persistent library? Why is that being called out? What makes that important?
 
-`Stop right there!? What is the purpose of a data persistent library? Why is that being called out? What makes that important?`
-
-`According to the book [JavaScript Cookbook](https://www.oreilly.com/library/view/javascript-cookbook/9781449390211/ch20.html), users` `expect to be able to close their browser window, reopen it, and see information they've saved prior. For example, shopping cart items` `should remain in the users shopping cart even if they've closed the browser. It is important to have a library the ensures this` `presistent state.`
-
+According to the book [JavaScript Cookbook](https://www.oreilly.com/library/view/javascript-cookbook/9781449390211/ch20.html), users expect to be able to close their browser window, reopen it, and see information they've saved prior. For example, shopping cart items should remain in the users shopping cart even if they've closed the browser. It is important to have a library the ensures this presistent state.
+```
 
 _Okay, let's continue reading._
 
