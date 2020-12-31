@@ -49,7 +49,9 @@ _Okay, let's continue reading._
 
 `What's WebSockets? I know about local storage but what is local IndexedDB storage?`
 
-`According to [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), The <strong>WebSocket API</strong> is an` `advanced technology that makes it possible to open a two-way interactive communication session between the user's browser and a` `server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a` `reply. <strong>IndexedDB</strong> is a low-level API for client-side storage of significant amounts of structured data, including` `files/blobs. This API uses indexes to enable high-performance searches of this data. While Web Storage is useful for storing smaller` `amounts of data, it is less useful for storing larger amounts of structured data. IndexedDB provides a solution.`
+`According to [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), The <strong>WebSocket API</strong> is an` `advanced technology that makes it possible to open a two-way interactive communication session between the user's browser and a` `server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a` `reply.`
+
+`<strong>IndexedDB</strong> is a low-level API for client-side storage of significant amounts of structured data, including` `files/blobs. This API uses indexes to enable high-performance searches of this data. While Web Storage is useful for storing smaller` `amounts of data, it is less useful for storing larger amounts of structured data. IndexedDB provides a solution.`
 
 
 Okay, let's continue.
