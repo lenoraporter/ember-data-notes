@@ -62,7 +62,7 @@ Okay, let's continue.
 
 It provides many of the facilities you'd find in server-side `ORM`s like `ActiveRecord`, but is designed specifically for the unique environment of `JavaScript` in the browser.
 
-`Cool, I kinda remember ActiveRecord but what does `ORM` stand for?`
+`Cool, I kinda remember ActiveRecord but what does ORM stand for?`
 
 `Object Relational Mapping (ORM) is the technique of accessing a relational database using an object-oriented programming language.` `Object Relational Mapping is a way for our Javascript programs to manage database data by "mapping" database tables to classes and` `instances of classes to rows in those tables.`
 
