@@ -85,3 +85,35 @@ not wish to use `ember-data`, remove `ember-data` from your `package.json`.
 
 ## [Ember.js tutorial for beginners #10 Ember data, store, adapter, serializer (2020)](https://www.youtube.com/watch?v=Le0ifGiNyq4)
 
+Shawn started the video by revealing a `data` folder called `products.js`. He showed us a raw `JSON` file filled with JavaScript objects. These objects held important product information.
+
+Shawn wanted to make this application interact with the backend server so: 
+
+1. Shawn move this JSON file into the `public` -> `api` -> `items.json` file. 
+2. Back in his Index route `index.js`, instead of returning `products`, he used the fetch function.
+
+Before: 
+
+```JavaScript
+import Route from '@ember/routing/route';
+import { products } from '../data/products';
+
+export default class IndexRoute extends Route {
+  model() {
+    return products;
+  }
+}
+```
+
+After:
+
+```JavaScript
+import Route from '@ember/routing/route';
+
+export default class IndexRoute extends Route {
+  async model() {
+    const reponse = await fetch('api/items.json'); // Since this is now a asynchronous call, we need to change the model into an async function
+    return data
+  }
+}
+```
