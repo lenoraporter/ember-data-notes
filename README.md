@@ -7,8 +7,8 @@ Resources I've found or purchased to learn more about Ember Data:
 Tang, David](https://www.amazon.com/Pro-Ember-Data-Getting-Work/dp/1484265602)
 - [Ember Data: A Comprehensive Tutorial for the ember-data Library](https://www.toptal.com/emberjs/a-thorough-guide-to-ember-data)
 - [Ember.js tutorial for beginners #10 Ember data, store, adapter, serializer (2020)](https://www.youtube.com/watch?v=Le0ifGiNyq4)
-- [Ember Data Guides](https://guides.emberjs.com/release/models/)
 - [Ember Data Repository](https://github.com/emberjs/data)
+- [Ember Data Guides](https://guides.emberjs.com/release/models/)
 
 <ins>Initial questions</ins>
 1. What is Ember Data?
@@ -24,13 +24,17 @@ Tang, David](https://www.amazon.com/Pro-Ember-Data-Getting-Work/dp/1484265602)
 11. What ways should I not use Ember Data?
 12. Who are some folks who know Ember Data well?
 13. How to contribute to Ember Data as a EXTREME junior or as a designer?
-14. How are some of the pros and cons of using Ember Data?
+14. Who hates Ember Data? What are they saying?
+15. Who loves Ember Data? What are they saying?
+16. Can I explain Ember Data to my mom?
 
-Let's start with Ember Data Repository README. I hate reading btw but here we go 😩. I will include my "dumb" thoughts and questions as well.
+Let's start with Ember Data's README. I hate reading btw but here we go 😩. I will include my "dumb" thoughts and questions as well.
 
 ## What is Ember Data?
 
 Ember data is a data persistence library for Ember.js.
+
+Stop right there!? What is the purpose of a data persistent library?
 
 
 
