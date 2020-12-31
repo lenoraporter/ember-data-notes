@@ -64,6 +64,9 @@ It provides many of the facilities you'd find in server-side `ORM`s like `Active
 
 `Cool, I kinda remember ActiveRecord but what does `ORM` stand for?`
 
+`Object Relational Mapping (ORM) is the technique of accessing a relational database using an object-oriented programming language.` `Object Relational Mapping is a way for our Javascript programs to manage database data by "mapping" database tables to classes and` `instances of classes to rows in those tables.`
+
+Great article about `ORM`s to read later - https://blog.logrocket.com/why-you-should-avoid-orms-with-examples-in-node-js-e0baab73fa5/
 
 
 ### Installation
