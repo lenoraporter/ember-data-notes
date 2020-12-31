@@ -60,6 +60,12 @@ _Okay, let's continue reading._
 
 Okay, let's continue.
 
+It provides many of the facilities you'd find in server-side `ORM`s like `ActiveRecord`, but is designed specifically for the unique environment of `JavaScript` in the browser.
+
+`Cool, I kinda remember ActiveRecord but what does `ORM` stand for?`
+
+
+
 ### Installation
 
 `ember-data` is installed by default for new applications generated with `ember-cli`.
