@@ -32,6 +32,7 @@ Tang, David](https://www.amazon.com/Pro-Ember-Data-Getting-Work/dp/1484265602)
 
 Let's start with Ember Data's README. I hate reading btw but here we go 😩. I will include my "dumb" thoughts and questions as well.
 
+# Ember Data README https://github.com/emberjs/data
 ## What is Ember Data?
 
 <strong>Ember data is a data persistence library for Ember.js.</strong>
@@ -56,4 +57,21 @@ _Okay, let's continue reading._
 
 
 Okay, let's continue.
+
+Installation
+------------------------------------------------------------------------------
+
+`ember-data` is installed by default for new applications generated with `ember-cli`.
+
+If you wish to add `ember-data` to an `addon` or `application`, you can do so by running
+the following command, which will use `yarn` or `npm` to install `ember-data` as a `devDependency`.
+
+```no-highlight
+ember install ember-data
+```
+
+Similarly, if you have generated a new `Ember` application using `ember-cli` but do 
+not wish to use `ember-data`, remove `ember-data` from your `package.json`.
+
+# Ember Data Guides https://guides.emberjs.com/release/models/
 
