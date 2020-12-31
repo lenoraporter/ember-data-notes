@@ -36,16 +36,20 @@ Let's start with Ember Data's README. I hate reading btw but here we go 😩. I 
 
 <strong>Ember data is a data persistence library for Ember.js.</strong>
 
+```
 _Stop right there!? What is the purpose of a data persistent library? Why is that being called out? What makes that important?_
 
 _According to the book [JavaScript Cookbook](https://www.oreilly.com/library/view/javascript-cookbook/9781449390211/ch20.html), users expect to be able to close their browser window, reopen it, and see information they've saved prior. For example, shopping cart items should remain in the users shopping cart even if they've closed the browser. It is important to have a library the ensures this presistent state._
+```
 
 _Okay, let's continue reading._
 
 `ember-data` is designed to be agnostic to the underlying persistence mechanism, so it works just as well with `JSON API` over `HTTP` as it does with streaming `WebSockets` or local `IndexedDB` storage.
 
+```
 _What's WebSockets? I know about local storage but what is local IndexedDB storage?_
 
 _According to [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API), The <strong>WebSocket API</strong> is an advanced technology that makes it possible to open a two-way interactive communication session between the user's browser and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply. <strong>IndexedDB</strong> is a low-level API for client-side storage of significant amounts of structured data, including files/blobs. This API uses indexes to enable high-performance searches of this data. While Web Storage is useful for storing smaller amounts of data, it is less useful for storing larger amounts of structured data. IndexedDB provides a solution._
-
+```
+Okay, let's continue.
 
