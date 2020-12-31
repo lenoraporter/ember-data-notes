@@ -23,7 +23,7 @@ Tang, David](https://www.amazon.com/Pro-Ember-Data-Getting-Work/dp/1484265602)
 10. How can I get Ember Data wrong?
 11. What ways should I not use Ember Data?
 12. Who are some folks who know Ember Data well?
-13. How to contribute to Ember Data as a EXTREME junior or as a designer?
+13. How to contribute to Ember Data as an EXTREME newbie?
 14. Who hates Ember Data? What are they saying?
 15. Who loves Ember Data? What are they saying?
 16. Can I explain Ember Data to my mom?
@@ -36,7 +36,7 @@ Let's start with Ember Data's README. I hate reading btw but here we go 😩. I 
 
 Ember data is a data persistence library for Ember.js.
 
-_Stop right there!? What is the purpose of a data persistent library? Why is that being called out?_
+_Stop right there!? What is the purpose of a data persistent library? Why is that being called out? What makes that important?_
 
 
 
