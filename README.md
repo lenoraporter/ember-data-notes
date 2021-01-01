@@ -112,8 +112,48 @@ import Route from '@ember/routing/route';
 
 export default class IndexRoute extends Route {
   async model() {
-    const reponse = await fetch('api/items.json'); // Since this is now a asynchronous call, we need to change the model into an async function
+    const response = await fetch('/api/items.json'); // Since this is now a asynchronous call, we need to change the model into an async function
+    const { data } = await response.json();
     return data
   }
 }
 ```
+3. Shawn needed to fetch the data for the item's details page as well.
+- Shawn went to the `item` route `item.js`, changed the model to an async function, and update each product detail.
+
+Before
+
+```JavaScript
+import Route from '@ember/routing/route';
+import { products } from '../data/products';
+
+export default class ItemRoute extends Route {
+  model(params) {
+    const {
+      item_id
+    } = params;
+    const product = products.find(({ id }) => id === item_id);
+    return product;
+  }
+}
+```
+
+After
+
+```JavaScript
+import Route from '@ember/routing/route';
+import { products } from '../data/products';
+
+export default class ItemRoute extends Route {
+  async model(params) {
+    const {
+      item_id
+    } = params;
+    const response = await fetch('/api/items.json');
+    const { data } = await response.json();
+    const product = data.find(({ id }) => id === item_id); // find the specific data from the product we are looking at.
+    return product;
+  }
+}
+```
+
