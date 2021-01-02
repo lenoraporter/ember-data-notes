@@ -1,4 +1,4 @@
-# ## Ember.js tutorial for beginners #10 Ember data, store, adapter, serializer (2020)
+# Ember.js tutorial for beginners #10 Ember data, store, adapter, serializer (2020)
 
 Shawn started the video by revealing a `data` folder called `products.js`. He showed us a raw `JSON` file filled with JavaScript objects. These objects held important product information.
 
