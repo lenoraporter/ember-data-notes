@@ -89,13 +89,13 @@ Shawn started the video by revealing a `data` folder called `products.js`. He sh
 
 Shawn wanted to make this application interact with the backend server so: 
 
-1. Shawn move this JSON file into the `public` -> `api` -> `items.json` file. 
+1. Shawn move the `data/products.js` JSON file into the `public/api/items.json` file. 
 
 ```JavaScript
-// public/api/products.json
+// public/api/items.json
 
 {
-  "products": [{
+  "data": [{
       "id": "1",
       "name": "Beats Solo Wireless Headphones",
       "description": "With up to 40 hours of battery life, Beats Solo Wireless is your perfect everyday headphone",
@@ -146,7 +146,7 @@ Shawn wanted to make this application interact with the backend server so:
 
 
 
-2. Back in his Index route `index.js`, instead of returning `products`, he used the fetch function.
+2. Back in his Index route `index.js`, instead of returning `products` (from the `data/products.js` file), he used the fetch function to fetch from the public api.
 
 Before: 
 
@@ -175,7 +175,7 @@ export default class IndexRoute extends Route {
 }
 ```
 3. Shawn needed to fetch the data for the item's details page as well.
-- Shawn went to the `item` route `item.js`, changed the model to an async function, and update each product detail.
+- Shawn went to the `item` route `item.js`, changed the model to an async function, and updated the product detail's page to fetch data from the public api.
 
 Before
 
@@ -192,13 +192,17 @@ export default class ItemRoute extends Route {
     return product;
   }
 }
+
+setupController(controller, model) {
+  super.setupController(controller, model);
+  controller.color = model.colors[0].color;
+}
 ```
 
 After
 
 ```JavaScript
 import Route from '@ember/routing/route';
-import { products } from '../data/products';
 
 export default class ItemRoute extends Route {
   async model(params) {
@@ -211,14 +215,20 @@ export default class ItemRoute extends Route {
     return product;
   }
 }
-```
-4. Now, it's time to create an Ember Data model.
 
+setupController(controller, model) {
+  super.setupController(controller, model);
+  controller.color = model.colors[0].color;
+}
+```
+4. You think we stop here? No way! Now, it's time to create an Ember Data model.
+
+Run this command in your console.
 ```JavaScript
-embr g model product
+ember g model product
 ```
 
-Which create a `app/models/product.js` file and a `tests/unit/models/product-test.js` file. 
+This creates a `app/models/product.js` file and a `tests/unit/models/product-test.js` file. 
 
 ```JavaScript
 // app/models/product.js
@@ -230,7 +240,7 @@ export default class ProductModel extends Model {
 }
 ```
 
-In order to use Ember data to pull in our products, we need to create the attributes.
+In order to use Ember data to pull in our products, we need to create the attributes with the { attr } decorator. { attr } has autotracking features so if anything changes, it automatically updates.
 
 ```JavaScript
 // app/models/product.js
@@ -245,4 +255,72 @@ export default class ProductModel extends Model {
   @attr features;
   @attr colors;
 }
+```
+
+5. Now, the model is all setup. We should go back to our route handler and make sure it is using the new model from Ember data.
+
+Before
+
+
+```JavaScript
+import Route from '@ember/routing/route';
+import { products } from '../data/products';
+
+export default class ItemRoute extends Route {
+  async model(params) {
+    const {
+      item_id
+    } = params;
+    const response = await fetch('/api/items.json');
+    const { data } = await response.json();
+    const product = data.find(({ id }) => id === item_id);
+    return product;
+  }
+}
+
+setupController(controller, model) {
+  super.setupController(controller, model);
+  controller.color = model.colors[0].color;
+}
+```
+
+
+After
+
+a. First we need to inject a service called store.
+b. Replace the `fetch` with `findall`
+
+```JavaScript
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
+
+export default class ItemRoute extends Route {
+@service store // It provides the find and findall methods for loading records.
+
+async model(params) {
+  const {
+    item_id
+  } = params;
+  const data = await this.store.findAll('product'); // Add await since it is an async call.
+  const product = data.find(({ id }) => id === item_id);
+  return product;
+ }
+
+  setupController(controller, model) {
+    super.setupController(controller, model);
+    controller.color = model.colors[0].color;
+  }
+}
+```
+6. After saving the changes to the route handler, the app crashes. The error states, "Ember Data Request GET /products returned a 404
+so now we need to update the name of our public api from `items.json` to `products.json`. After refreshing, it still returns a 404. Ember Data doesn't know how to get the right data so you have to teach it using adapters and serializers.
+
+Adapters help you define how to fetch the data and where to fetch it from the server. After receiving the response, you need the serializer to convert the response or reformat it to a way where our app can recognize it.
+
+So, let's create an adapter.
+
+Run this in your console.
+
+```JavaScript
+ember g adapter application
 ```
