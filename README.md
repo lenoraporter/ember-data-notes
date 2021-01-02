@@ -90,6 +90,62 @@ Shawn started the video by revealing a `data` folder called `products.js`. He sh
 Shawn wanted to make this application interact with the backend server so: 
 
 1. Shawn move this JSON file into the `public` -> `api` -> `items.json` file. 
+
+```JavaScript
+// public/api/products.json
+
+{
+  "products": [{
+      "id": "1",
+      "name": "Beats Solo Wireless Headphones",
+      "description": "With up to 40 hours of battery life, Beats Solo Wireless is your perfect everyday headphone",
+      "price": {
+        "original": 199.95,
+        "current": 99.98
+      },
+      "features": [
+        "High-performance wireless noise cancelling headphones in red",
+        "Active Noise Cancelling (ANC) blocks external noise",
+        "Transparency helps you stay aware of your surroundings while listening",
+        "Features the Apple H1 Headphone Chip and Class 1 Bluetooth for extended range and fewer dropouts",
+        "Compatible with iOS and Android",
+        "Hands-free controls via “Hey Siri” on iOS devices, and voice capability with the push of the b button on a variety of compatible devices ",
+        "Up to 22 hours of listening time (up to 40 hours with ANC and Transparency turned off)"
+      ],
+      "colors": [{
+          "color": "red",
+          "image": "/assets/images/beats-solo-red.png"
+        },
+        {
+          "color": "black",
+          "image": "/assets/images/beats-solo-black.png"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Nike Aire Force 1",
+      "description": "Debuting in 1982, the AF1 was the first basketball shoe to house Nike Air, revolutionizing the game while rapidly gaining traction around the world.",
+      "price": {
+        "original": 109.95,
+        "current": 89.98
+      },
+      "features": [
+        "Full-grain leather in the upper adds a premium look and feel.",
+        "Originally designed for performance hoops, Nike Air cushioning adds lightweight, all-day comfort.",
+        "The padded, low-cut collar looks sleek and feels great."
+      ],
+      "colors": [{
+        "color": "white",
+        "image": "/assets/images/nike-af1-white.png"
+      }]
+    }
+  ]
+}
+```
+
+
+
 2. Back in his Index route `index.js`, instead of returning `products`, he used the fetch function.
 
 Before: 
@@ -156,4 +212,37 @@ export default class ItemRoute extends Route {
   }
 }
 ```
+4. Now, it's time to create an Ember Data model.
 
+```JavaScript
+embr g model product
+```
+
+Which create a `app/models/product.js` file and a `tests/unit/models/product-test.js` file. 
+
+```JavaScript
+// app/models/product.js
+
+import Model from `@ember-data/model';
+
+export default class ProductModel extends Model {
+
+}
+```
+
+In order to use Ember data to pull in our products, we need to create the attributes.
+
+```JavaScript
+// app/models/product.js
+
+import Model, { attr } from `@ember-data/model';
+
+export default class ProductModel extends Model {
+  @attr id;
+  @attr name;
+  @attr description;
+  @attr price;
+  @attr features;
+  @attr colors;
+}
+```
