@@ -34,8 +34,8 @@ Let's start with Ember Data's README. I hate reading btw but here we go 😩. I 
 
 
 | Learning Ember Data | Website | Link |
-|--------------------:|--------:|-----:|
-| Ember Data ReadMe.  | https://github.com/emberjs/data | (link)[0-ember-data-readme.md]
+|:--------------------|:--------|:-----|
+| Ember Data ReadMe.  | https://github.com/emberjs/data | (link)[https://github.com/lenoraporter/ember-data-notes/blob/main/0-ember-data-readme.md]
 
 ## [Ember.js tutorial for beginners #10 Ember data, store, adapter, serializer (2020)](https://www.youtube.com/watch?v=Le0ifGiNyq4)
 
