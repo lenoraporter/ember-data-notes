@@ -332,3 +332,150 @@ Run this in your console.
 ```JavaScript
 ember g serializer application
 ```
+
+So, let's go into the adapter.
+
+(a). Overwrite the buildURL function
+(b). Change the `import JSONAPIAdapter from '@ember-data/adapter/json-api';` to `import RESTAdapter from '@ember-data/adapter/rest';`
+(c). The file is at api/products.json so you'll need to add a namespace.
+
+```JavaScript
+import RESTAdapter from '@ember-data/adapter/rest';
+
+export default class ApplicationAdapter extends RESTAdapter {
+  namespace = 'api';
+  buildURL(...args) {
+    return `${super.buildURL(...args)}.json`;
+  }
+}
+
+```
+
+Then, we need to update the serializer
+
+(a). Overwrite the buildURL function
+(b). Change the `import JSONAPISerializer from '@ember-data/serializer/json-api';` to `import RESTSerializer from '@ember-data/serializer/rest';`
+
+```JavaScript
+import RESTSerializer from '@ember-data/serializer/rest';
+
+export default class ApplicationSerializer extends RESTAdapter {
+
+}
+
+```
+
+7. After saving it, we need to update the `products.json` file. We need to change the object name from `data` to `products`.
+Why? Well, this tells Ember Data this array contains the data for the product model.
+
+```JavaScript
+// public/api/products.json
+
+{
+  "products": [{
+      "id": "1",
+      "name": "Beats Solo Wireless Headphones",
+      "description": "With up to 40 hours of battery life, Beats Solo Wireless is your perfect everyday headphone",
+      "price": {
+        "original": 199.95,
+        "current": 99.98
+      },
+      "features": [
+        "High-performance wireless noise cancelling headphones in red",
+        "Active Noise Cancelling (ANC) blocks external noise",
+        "Transparency helps you stay aware of your surroundings while listening",
+        "Features the Apple H1 Headphone Chip and Class 1 Bluetooth for extended range and fewer dropouts",
+        "Compatible with iOS and Android",
+        "Hands-free controls via “Hey Siri” on iOS devices, and voice capability with the push of the b button on a variety of compatible devices ",
+        "Up to 22 hours of listening time (up to 40 hours with ANC and Transparency turned off)"
+      ],
+      "colors": [{
+          "color": "red",
+          "image": "/assets/images/beats-solo-red.png"
+        },
+        {
+          "color": "black",
+          "image": "/assets/images/beats-solo-black.png"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Nike Aire Force 1",
+      "description": "Debuting in 1982, the AF1 was the first basketball shoe to house Nike Air, revolutionizing the game while rapidly gaining traction around the world.",
+      "price": {
+        "original": 109.95,
+        "current": 89.98
+      },
+      "features": [
+        "Full-grain leather in the upper adds a premium look and feel.",
+        "Originally designed for performance hoops, Nike Air cushioning adds lightweight, all-day comfort.",
+        "The padded, low-cut collar looks sleek and feels great."
+      ],
+      "colors": [{
+        "color": "white",
+        "image": "/assets/images/nike-af1-white.png"
+      }]
+    }
+  ]
+}
+```
+8. After saving, we get one more error. Error states "Error while processing route: item Assertion Failed: You may not set `id` as an attribute on your model. Please remove any lines that look like `id`;
+
+
+```JavaScript
+// app/models/product.js
+
+import Model, { attr } from `@ember-data/model';
+
+export default class ProductModel extends Model {
+  @attr id; // Remove id
+  @attr name;
+  @attr description;
+  @attr price;
+  @attr features;
+  @attr colors;
+}
+```
+
+9. Last step is to update the index.
+
+Before
+
+```JavaScript
+// app/routes/index.js
+
+import Route from '@ember/routing/route';
+
+export default class IndexRoute extends Route {
+  async model() {
+    const response = await fetch('/api/items.json'); // Since this is now a asynchronous call, we need to change the model into an async function
+    const { data } = await response.json();
+    return data
+  }
+}
+```
+
+
+After
+```JavaScript
+// app/routes/index.js
+
+import Route from '@ember/routing/route';
+import { inject as service } from `@ember/service`;
+
+export default class IndexRoute extends Route {
+  @service store;
+  
+  async model() {
+    return this.store.findAll('product');
+  }
+}
+```
+
+Questions while watching this tutorial
+1. What is the `buildURL` function?
+2. Do we still need to use setupController?
+3. What is the difference between Rest and JSON?
+4. When to make things plural and when to make it singular? I'm confused by the `products` `product` thing.
+5. Why did we have to remove the id?
