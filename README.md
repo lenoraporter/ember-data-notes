@@ -324,3 +324,11 @@ Run this in your console.
 ```JavaScript
 ember g adapter application
 ```
+
+We want to have an adapter to manage all the API calls throughout the application.
+
+Run this in your console.
+
+```JavaScript
+ember g serializer application
+```
