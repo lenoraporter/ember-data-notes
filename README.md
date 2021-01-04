@@ -37,5 +37,5 @@ Let's start with Ember Data's README. I hate reading btw but here we go 😩. I 
 |:--------------------|:--------|:-----|
 |  Ember Data ReadMe  | https://github.com/emberjs/data | [link](https://github.com/lenoraporter/ember-data-notes/blob/main/0-ember-data-readme.md)
 | Shawn Chen YouTube  | https://www.youtube.com/watch?v=Le0ifGiNyq4 | [link](https://github.com/lenoraporter/ember-data-notes/blob/main/01-shawn-chen-youtube.md)  |
-| Ember Data Guides   | https://guides.emberjs.com/release/models/  | [link](https://github.com/lenoraporter/ember-data-notes/blob/main/03-ember-data-guides.md) |
-| Book: Pro Ember Data | https://www.amazon.com/Pro-Ember-Data-Getting-Work/dp/1484265602 | [link]() |
+| Ember Data Guides   | https://guides.emberjs.com/release/models/  | [link](https://github.com/lenoraporter/ember-data-notes/blob/main/02-ember-data-guides.md) |
+| Book: Pro Ember Data | https://www.amazon.com/Pro-Ember-Data-Getting-Work/dp/1484265602 | [link](https://github.com/lenoraporter/ember-data-notes/blob/main/03-book-pro-ember-data.md) |
